@@ -90,6 +90,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
+console.log('task 3',reviews[5].feedback);
 
 
 
@@ -98,7 +99,9 @@ Reyna's feedback is missing! Use what you know to do the following: (no function
   1. Add this feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
   2. log the reviews array to the console to check your work
 */
+reviews[7].feedback = 'this place is chill with really cool people,great for getting work done on weekdays'
 
+console.log(reviews); 
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -113,9 +116,12 @@ Use the addReview function below to do the following:
 */
 
 
-function addReview(/*Your Code Here */){
-  /*Your Code Here */
+function addReview(arr, name, rating, feedback){
+  arr.push({name, rating ,feedback}) 
+  return arr;
 }
+   
+console.log(addReview(reviews, 'Billy', 2,'Lame food!'));
 
 
 
@@ -130,11 +136,11 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
-}
+function getReviewByIndex(array,number) {
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`};
 
-  
+  console.log(getReviewByIndex(reviews, 6));
+
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -149,9 +155,10 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
-} 
+function getLastReview(array) {
+  return `${array[array.length-1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`;
+
+}
 
 
 
